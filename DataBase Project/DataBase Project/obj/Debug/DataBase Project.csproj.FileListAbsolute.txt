@@ -9,3 +9,15 @@ D:\DataBase Project\DataBase Project\DataBase Project\obj\Debug\DataBase Project
 D:\DataBase Project\DataBase Project\DataBase Project\obj\Debug\DataBase_Project.login.resources
 D:\DataBase Project\DataBase Project\DataBase Project\obj\Debug\DataBase_Project.borrow_return.resources
 D:\DataBase Project\DataBase Project\DataBase Project\obj\Debug\DataBase_Project.main.resources
+D:\数据库大作业\trunk\DataBase Project\DataBase Project\bin\Debug\DataBase Project.exe.config
+D:\数据库大作业\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase Project.exe
+D:\数据库大作业\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase Project.pdb
+D:\数据库大作业\trunk\DataBase Project\DataBase Project\bin\Debug\DataBase Project.exe
+D:\数据库大作业\trunk\DataBase Project\DataBase Project\bin\Debug\DataBase Project.pdb
+D:\数据库大作业\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase Project.csprojResolveAssemblyReference.cache
+D:\数据库大作业\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase_Project.borrow_return.resources
+D:\数据库大作业\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase_Project.login.resources
+D:\数据库大作业\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase_Project.Properties.Resources.resources
+D:\数据库大作业\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase_Project.main.resources
+D:\数据库大作业\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase_Project.register.resources
+D:\数据库大作业\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase Project.csproj.GenerateResource.Cache

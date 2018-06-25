@@ -37,5 +37,11 @@ namespace DataBase_Project
             main mainForm = new main();
             mainForm.Show();
         }
+
+        private void register_Click(object sender, EventArgs e)
+        {
+            register registerForm = new register();
+            registerForm.Show();
+        }
     }
 }
