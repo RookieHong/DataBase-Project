@@ -10,5 +10,7 @@ namespace DataBase_Project
     class Data
     {
         public static loginStatus identity = loginStatus.Unlogin;
+        public static string currentAccount = "";
+        public static string currentPasswd = "";
     }
 }
