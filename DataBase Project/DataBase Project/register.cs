@@ -19,13 +19,18 @@ namespace DataBase_Project
             InitializeComponent();
         }
 
+        private void register_Load(object sender, EventArgs e)
+        {
+            identity.SelectedIndex = 0;//初始一个默认项
+        }
+
         private void confirm_Click(object sender, EventArgs e)
         {
             string inputAccount = account.Text.Trim();
             string inputPassword = password.Text;
             int inputIdentity = (identity.Text == "管理员") ? 0 : 1;
 
-            if(String.IsNullOrEmpty(inputAccount)||String.IsNullOrEmpty(inputPassword)||String.IsNullOrEmpty(identity.Text))
+            if(String.IsNullOrEmpty(inputAccount)||String.IsNullOrEmpty(inputPassword))
             {
                 if (MessageBox.Show("请先把信息填写完整！", "提示") == DialogResult.OK)
                     return;

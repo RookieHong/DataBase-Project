@@ -117,6 +117,7 @@ namespace DataBase_Project
             this.Controls.Add(this.label1);
             this.Name = "register";
             this.Text = "注册";
+            this.Load += new System.EventHandler(this.register_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -37,21 +37,21 @@
             this.readerSearchResult = new System.Windows.Forms.DataGridView();
             this.readerCondition = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.department = new System.Windows.Forms.TextBox();
-            this.readerBorrowedCount = new System.Windows.Forms.TextBox();
+            this.dept = new System.Windows.Forms.TextBox();
+            this.rBorrowedNum = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.readerBorrowCount = new System.Windows.Forms.TextBox();
+            this.rCurNum = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.sex = new System.Windows.Forms.ComboBox();
             this.readerSearch = new System.Windows.Forms.Button();
             this.phone = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.title = new System.Windows.Forms.TextBox();
+            this.job = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.readerName = new System.Windows.Forms.TextBox();
+            this.rname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.readerID = new System.Windows.Forms.TextBox();
+            this.borrowid = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.allBooksInfo = new System.Windows.Forms.TabPage();
             this.editBook = new System.Windows.Forms.Button();
@@ -170,21 +170,21 @@
             // readerCondition
             // 
             this.readerCondition.Controls.Add(this.label10);
-            this.readerCondition.Controls.Add(this.department);
-            this.readerCondition.Controls.Add(this.readerBorrowedCount);
+            this.readerCondition.Controls.Add(this.dept);
+            this.readerCondition.Controls.Add(this.rBorrowedNum);
             this.readerCondition.Controls.Add(this.label11);
-            this.readerCondition.Controls.Add(this.readerBorrowCount);
+            this.readerCondition.Controls.Add(this.rCurNum);
             this.readerCondition.Controls.Add(this.label12);
             this.readerCondition.Controls.Add(this.sex);
             this.readerCondition.Controls.Add(this.readerSearch);
             this.readerCondition.Controls.Add(this.phone);
             this.readerCondition.Controls.Add(this.label5);
-            this.readerCondition.Controls.Add(this.title);
+            this.readerCondition.Controls.Add(this.job);
             this.readerCondition.Controls.Add(this.label4);
             this.readerCondition.Controls.Add(this.label3);
-            this.readerCondition.Controls.Add(this.readerName);
+            this.readerCondition.Controls.Add(this.rname);
             this.readerCondition.Controls.Add(this.label2);
-            this.readerCondition.Controls.Add(this.readerID);
+            this.readerCondition.Controls.Add(this.borrowid);
             this.readerCondition.Controls.Add(this.label1);
             this.readerCondition.Location = new System.Drawing.Point(26, 23);
             this.readerCondition.Name = "readerCondition";
@@ -202,20 +202,20 @@
             this.label10.TabIndex = 24;
             this.label10.Text = "工作部门";
             // 
-            // department
+            // dept
             // 
-            this.department.Location = new System.Drawing.Point(432, 71);
-            this.department.Name = "department";
-            this.department.Size = new System.Drawing.Size(100, 21);
-            this.department.TabIndex = 23;
+            this.dept.Location = new System.Drawing.Point(432, 71);
+            this.dept.Name = "dept";
+            this.dept.Size = new System.Drawing.Size(100, 21);
+            this.dept.TabIndex = 23;
             // 
-            // readerBorrowedCount
+            // rBorrowedNum
             // 
-            this.readerBorrowedCount.Location = new System.Drawing.Point(267, 71);
-            this.readerBorrowedCount.Name = "readerBorrowedCount";
-            this.readerBorrowedCount.Size = new System.Drawing.Size(100, 21);
-            this.readerBorrowedCount.TabIndex = 22;
-            this.readerBorrowedCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
+            this.rBorrowedNum.Location = new System.Drawing.Point(267, 71);
+            this.rBorrowedNum.Name = "rBorrowedNum";
+            this.rBorrowedNum.Size = new System.Drawing.Size(100, 21);
+            this.rBorrowedNum.TabIndex = 22;
+            this.rBorrowedNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
             // 
             // label11
             // 
@@ -226,13 +226,13 @@
             this.label11.TabIndex = 21;
             this.label11.Text = "最少已借数量";
             // 
-            // readerBorrowCount
+            // rCurNum
             // 
-            this.readerBorrowCount.Location = new System.Drawing.Point(85, 71);
-            this.readerBorrowCount.Name = "readerBorrowCount";
-            this.readerBorrowCount.Size = new System.Drawing.Size(100, 21);
-            this.readerBorrowCount.TabIndex = 20;
-            this.readerBorrowCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
+            this.rCurNum.Location = new System.Drawing.Point(85, 71);
+            this.rCurNum.Name = "rCurNum";
+            this.rCurNum.Size = new System.Drawing.Size(100, 21);
+            this.rCurNum.TabIndex = 20;
+            this.rCurNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
             // 
             // label12
             // 
@@ -263,6 +263,7 @@
             this.readerSearch.TabIndex = 16;
             this.readerSearch.Text = "查询";
             this.readerSearch.UseVisualStyleBackColor = true;
+            this.readerSearch.Click += new System.EventHandler(this.readerSearch_Click);
             // 
             // phone
             // 
@@ -281,12 +282,12 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "联系电话";
             // 
-            // title
+            // job
             // 
-            this.title.Location = new System.Drawing.Point(597, 32);
-            this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(100, 21);
-            this.title.TabIndex = 7;
+            this.job.Location = new System.Drawing.Point(597, 32);
+            this.job.Name = "job";
+            this.job.Size = new System.Drawing.Size(100, 21);
+            this.job.TabIndex = 7;
             // 
             // label4
             // 
@@ -306,12 +307,12 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "性别";
             // 
-            // readerName
+            // rname
             // 
-            this.readerName.Location = new System.Drawing.Point(267, 32);
-            this.readerName.Name = "readerName";
-            this.readerName.Size = new System.Drawing.Size(100, 21);
-            this.readerName.TabIndex = 3;
+            this.rname.Location = new System.Drawing.Point(267, 32);
+            this.rname.Name = "rname";
+            this.rname.Size = new System.Drawing.Size(100, 21);
+            this.rname.TabIndex = 3;
             // 
             // label2
             // 
@@ -322,13 +323,13 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "姓名";
             // 
-            // readerID
+            // borrowid
             // 
-            this.readerID.Location = new System.Drawing.Point(85, 32);
-            this.readerID.Name = "readerID";
-            this.readerID.Size = new System.Drawing.Size(100, 21);
-            this.readerID.TabIndex = 1;
-            this.readerID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
+            this.borrowid.Location = new System.Drawing.Point(85, 32);
+            this.borrowid.Name = "borrowid";
+            this.borrowid.Size = new System.Drawing.Size(100, 21);
+            this.borrowid.TabIndex = 1;
+            this.borrowid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
             // 
             // label1
             // 
@@ -621,6 +622,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "main";
             this.Text = "查询&管理";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.main_FormClosed);
             this.Load += new System.EventHandler(this.main_Load);
             this.tabControl1.ResumeLayout(false);
             this.readerInfo.ResumeLayout(false);
@@ -652,12 +654,12 @@
         private System.Windows.Forms.Button readerSearch;
         private System.Windows.Forms.TextBox phone;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox title;
+        private System.Windows.Forms.TextBox job;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox readerName;
+        private System.Windows.Forms.TextBox rname;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox readerID;
+        private System.Windows.Forms.TextBox borrowid;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView bookSearchResult;
@@ -675,10 +677,10 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DataGridView delayedbookSearchResult;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox department;
-        private System.Windows.Forms.TextBox readerBorrowedCount;
+        private System.Windows.Forms.TextBox dept;
+        private System.Windows.Forms.TextBox rBorrowedNum;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox readerBorrowCount;
+        private System.Windows.Forms.TextBox rCurNum;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox sex;
         private System.Windows.Forms.ComboBox borrowable;
