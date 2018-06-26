@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.bookSearchResult = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.readerInfo = new System.Windows.Forms.TabPage();
             this.editReader = new System.Windows.Forms.Button();
@@ -60,7 +61,6 @@
             this.returnBook = new System.Windows.Forms.Button();
             this.borrowBook = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.bookSearchResult = new System.Windows.Forms.DataGridView();
             this.bookCondition = new System.Windows.Forms.GroupBox();
             this.borrowable = new System.Windows.Forms.ComboBox();
             this.bookSearch = new System.Windows.Forms.Button();
@@ -81,6 +81,7 @@
             this.delayedBookSearch = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.delayedbookSearchResult = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.bookSearchResult)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.readerInfo.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -88,12 +89,20 @@
             this.readerCondition.SuspendLayout();
             this.allBooksInfo.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bookSearchResult)).BeginInit();
             this.bookCondition.SuspendLayout();
             this.delayedBooksInfo.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.delayedbookSearchResult)).BeginInit();
             this.SuspendLayout();
+            // 
+            // bookSearchResult
+            // 
+            this.bookSearchResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.bookSearchResult.Location = new System.Drawing.Point(3, 14);
+            this.bookSearchResult.Name = "bookSearchResult";
+            this.bookSearchResult.RowTemplate.Height = 23;
+            this.bookSearchResult.Size = new System.Drawing.Size(714, 291);
+            this.bookSearchResult.TabIndex = 0;
             // 
             // tabControl1
             // 
@@ -412,15 +421,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "查询结果";
             // 
-            // bookSearchResult
-            // 
-            this.bookSearchResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bookSearchResult.Location = new System.Drawing.Point(3, 14);
-            this.bookSearchResult.Name = "bookSearchResult";
-            this.bookSearchResult.RowTemplate.Height = 23;
-            this.bookSearchResult.Size = new System.Drawing.Size(714, 291);
-            this.bookSearchResult.TabIndex = 0;
-            // 
             // bookCondition
             // 
             this.bookCondition.Controls.Add(this.borrowable);
@@ -465,6 +465,7 @@
             this.bookSearch.TabIndex = 16;
             this.bookSearch.Text = "查询";
             this.bookSearch.UseVisualStyleBackColor = true;
+            this.bookSearch.Click += new System.EventHandler(this.bookSearch_Click);
             // 
             // author
             // 
@@ -624,6 +625,7 @@
             this.Text = "查询&管理";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.main_FormClosed);
             this.Load += new System.EventHandler(this.main_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bookSearchResult)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.readerInfo.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -632,7 +634,6 @@
             this.readerCondition.PerformLayout();
             this.allBooksInfo.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bookSearchResult)).EndInit();
             this.bookCondition.ResumeLayout(false);
             this.bookCondition.PerformLayout();
             this.delayedBooksInfo.ResumeLayout(false);
@@ -662,7 +663,6 @@
         private System.Windows.Forms.TextBox borrowid;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView bookSearchResult;
         private System.Windows.Forms.GroupBox bookCondition;
         private System.Windows.Forms.Button bookSearch;
         private System.Windows.Forms.TextBox author;
@@ -697,5 +697,6 @@
         private System.Windows.Forms.Button addBook;
         private System.Windows.Forms.Button returnBook;
         private System.Windows.Forms.Button borrowBook;
+        private System.Windows.Forms.DataGridView bookSearchResult;
     }
 }

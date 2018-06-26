@@ -17,7 +17,6 @@ namespace DataBase_Project
         {
             InitializeComponent();
         }
-
         private void main_Load(object sender, EventArgs e)
         {
             //初始化默认值
@@ -25,9 +24,10 @@ namespace DataBase_Project
             borrowable.SelectedIndex = 0;
             rCurNum.Text = "0";
             rBorrowedNum.Text = "0";
-
+            bookBorrowCount.Text = "0";
+            bookTotalCount.Text = "0";
             //根据登录的身份隐藏/显示按钮
-            switch(Data.identity)
+            switch (Data.identity)
             {
                 case loginStatus.Admin:
                     borrowBook.Visible = false;
@@ -89,5 +89,30 @@ namespace DataBase_Project
 
             this.readerSearchResult.DataSource = result.Tables["readers"];
         }
+
+        private void bookSearch_Click(object sender, EventArgs e)
+        {
+            string bookSearchSql =
+                String.Format("select * from books where isbn like '%{0}%' and bname like '%{1}%' and pub like '%{2}%' and author like '%{3}%' and bCurNum>={4} and storeNum>={5} and available='{6}'",
+                                bookID.Text, bookName.Text, press.Text, author.Text, bookBorrowCount.Text, bookTotalCount.Text, borrowable.Text);
+            SqlDataAdapter sda = new SqlDataAdapter(bookSearchSql, Data.currentConnection);
+            DataSet result = new DataSet();
+
+            try
+            {
+                sda.Fill(result, "books");
+            }
+            catch(SqlException exception)
+            {
+                if (MessageBox.Show(exception.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
+                {
+                    sda.Dispose();
+                    return;
+                }
+            }
+
+            this.bookSearchResult.DataSource = result.Tables["books"];
+        }
+
     }
 }

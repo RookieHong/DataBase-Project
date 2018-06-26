@@ -21,3 +21,15 @@ D:\数据库大作业\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase
 D:\数据库大作业\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase_Project.main.resources
 D:\数据库大作业\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase_Project.register.resources
 D:\数据库大作业\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase Project.csproj.GenerateResource.Cache
+F:\DataBase-Project\trunk\DataBase Project\DataBase Project\bin\Debug\DataBase Project.exe.config
+F:\DataBase-Project\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase Project.exe
+F:\DataBase-Project\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase Project.pdb
+F:\DataBase-Project\trunk\DataBase Project\DataBase Project\bin\Debug\DataBase Project.exe
+F:\DataBase-Project\trunk\DataBase Project\DataBase Project\bin\Debug\DataBase Project.pdb
+F:\DataBase-Project\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase Project.csprojResolveAssemblyReference.cache
+F:\DataBase-Project\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase_Project.borrow_return.resources
+F:\DataBase-Project\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase_Project.login.resources
+F:\DataBase-Project\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase_Project.Properties.Resources.resources
+F:\DataBase-Project\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase_Project.main.resources
+F:\DataBase-Project\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase_Project.register.resources
+F:\DataBase-Project\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase Project.csproj.GenerateResource.Cache
