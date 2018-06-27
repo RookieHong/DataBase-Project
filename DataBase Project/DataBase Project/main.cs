@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using DBUtility;
 
 namespace DataBase_Project
 {
@@ -114,5 +115,35 @@ namespace DataBase_Project
             this.bookSearchResult.DataSource = result.Tables["books"];
         }
 
+        private void deleteBook_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int a = bookSearchResult.CurrentRow.Index;//获取当前选中行
+                //MessageBox.Show(a.ToString());
+                string isbn = bookSearchResult.Rows[a].Cells[0].Value.ToString().Trim();
+                //获取该行第0列数据
+                string sql = "delete from books where isbn='" + isbn + "'";
+                //确认是否删除
+                if (DialogResult.Yes == MessageBox.Show("确定要删除该记录", "警告", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1))
+                {
+                    //SQL删除语句字符串
+
+                    if (DbHelperSQL.ExecuteSql(sql) > 0) //向源数据库传递SQL命令字符串，得到删除结果
+                    {
+                        MessageBox.Show("删除成功");
+                    }
+                    else
+                    {
+                        MessageBox.Show("删除失败");
+                    }
+                }
+            }
+            catch (NullReferenceException exception)
+            {
+                MessageBox.Show("请先选中一行！");
+                return;
+            }
+        }
     }
 }

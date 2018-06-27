@@ -383,6 +383,7 @@
             this.deleteBook.TabIndex = 7;
             this.deleteBook.Text = "删除";
             this.deleteBook.UseVisualStyleBackColor = true;
+            this.deleteBook.Click += new System.EventHandler(this.deleteBook_Click);
             // 
             // addBook
             // 

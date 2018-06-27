@@ -55,6 +55,7 @@
       <DependentUpon>borrow_return.cs</DependentUpon>
     </Compile>
     <Compile Include="Data.cs" />
+    <Compile Include="DbHelperSQL.cs" />
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +70,7 @@
     <Compile Include="main.Designer.cs">
       <DependentUpon>main.cs</DependentUpon>
     </Compile>
+    <Compile Include="PubConstant.cs" />
     <Compile Include="register.cs">
       <SubType>Form</SubType>
     </Compile>
