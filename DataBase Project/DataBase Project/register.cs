@@ -39,15 +39,17 @@ namespace DataBase_Project
             string connectionString = "server=localhost;database=Library;uid=sa;pwd=123456";
             SqlConnection con = new SqlConnection(connectionString);
 
+            string role;
+            if (inputIdentity == 0) role = "admin";
+            else role = "reader";
             string registerTran = String.Format(@"begin tran 
                                     SET XACT_ABORT ON 
                                     create login {0} with password='{1}', default_database=Library 
                                     create user {2} for login {3} 
-                                    exec sp_addrolemember 'db_accessadmin', '{4}' 
-                                    exec sp_addrolemember 'admin', '{5}' 
+                                    exec sp_addrolemember '{4}', '{5}' 
                                     insert into users values('{6}', '{7}', '{8}') 
                                     commit tran", 
-                                    inputAccount, inputPassword, inputAccount, inputAccount, inputAccount, inputAccount, inputAccount, inputPassword, identity.Text);
+                                    inputAccount, inputPassword, inputAccount, inputAccount, role, inputAccount, inputAccount, inputPassword, identity.Text);
             //string addLoginSql = "create login " + inputAccount + " with password='" + inputPassword + "', default_database=Library";
             //string addLoginSql = String.Format("create login {0} with password='{1}',default_database=Library",inputAccount,inputPassword);
             //string addUserSql = "EXEC sp_grantdbaccess '" + inputAccount + "','" + inputAccount + "'";
@@ -95,8 +97,9 @@ namespace DataBase_Project
                 //if (MessageBox.Show(result, "提示") == DialogResult.OK) this.Close();
             }
 
-            string addSrvRole = String.Format("exec sp_addsrvrolemember '{0}', 'securityadmin'", inputAccount);
-            SqlCommand addSrvRoleCmd = new SqlCommand(addSrvRole, con);
+            string addRole = String.Format("exec sp_addsrvrolemember '{0}', 'securityadmin' ", inputAccount);
+            if (inputIdentity == 0) addRole += String.Format("exec sp_addrolemember 'db_accessadmin','{0}'", inputAccount);
+            SqlCommand addSrvRoleCmd = new SqlCommand(addRole, con);
             try
             {
                 addSrvRoleCmd.ExecuteNonQuery();

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using static DataBase_Project.PubConstant;
 
 namespace DataBase_Project
 {
@@ -25,10 +26,10 @@ namespace DataBase_Project
 
         private void confirm_Click(object sender, EventArgs e)
         {
-            Data.currentConnection.ConnectionString = String.Format("server=localhost;database=Library;uid={0};pwd={1}", account.Text.Trim(), password.Text);
+            PubConstant.currentConnection.ConnectionString = String.Format("server=localhost;database=Library;uid={0};pwd={1}", account.Text.Trim(), password.Text);
             try
             {
-                Data.currentConnection.Open();
+                PubConstant.currentConnection.Open();
             }
             catch(InvalidOperationException exception)
             {
@@ -42,16 +43,16 @@ namespace DataBase_Project
             }
             if (MessageBox.Show("登录成功！", "提示") == DialogResult.OK)
             {
-                Data.currentAccount = account.Text.Trim();
-                Data.currentPasswd = password.Text;
+                PubConstant.currentAccount = account.Text.Trim();
+                PubConstant.currentPasswd = password.Text;
 
                 switch (identity.SelectedIndex)
                 {
                     case 0:
-                        Data.identity = loginStatus.Admin;
+                        PubConstant.identity = loginStatus.Admin;
                         break;
                     case 1:
-                        Data.identity = loginStatus.Reader;
+                        PubConstant.identity = loginStatus.Reader;
                         break;
                 }
 

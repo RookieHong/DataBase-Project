@@ -60,7 +60,6 @@
     <Compile Include="borrow_return.Designer.cs">
       <DependentUpon>borrow_return.cs</DependentUpon>
     </Compile>
-    <Compile Include="Data.cs" />
     <Compile Include="DbHelperSQL.cs" />
     <Compile Include="login.cs">
       <SubType>Form</SubType>
@@ -77,6 +76,12 @@
       <DependentUpon>main.cs</DependentUpon>
     </Compile>
     <Compile Include="PubConstant.cs" />
+    <Compile Include="ReaderEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReaderEdit.Designer.cs">
+      <DependentUpon>ReaderEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +108,9 @@
     </Compile>
     <EmbeddedResource Include="main.resx">
       <DependentUpon>main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReaderEdit.resx">
+      <DependentUpon>ReaderEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="register.resx">
       <DependentUpon>register.cs</DependentUpon>

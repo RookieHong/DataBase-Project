@@ -147,6 +147,7 @@
             this.deleteReader.TabIndex = 3;
             this.deleteReader.Text = "删除";
             this.deleteReader.UseVisualStyleBackColor = true;
+            this.deleteReader.Click += new System.EventHandler(this.deleteReader_Click);
             // 
             // addReader
             // 
@@ -156,6 +157,7 @@
             this.addReader.TabIndex = 2;
             this.addReader.Text = "新增";
             this.addReader.UseVisualStyleBackColor = true;
+            this.addReader.Click += new System.EventHandler(this.addReader_Click);
             // 
             // groupBox2
             // 
@@ -224,7 +226,7 @@
             this.rBorrowedNum.Name = "rBorrowedNum";
             this.rBorrowedNum.Size = new System.Drawing.Size(100, 21);
             this.rBorrowedNum.TabIndex = 22;
-            this.rBorrowedNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
+            this.rBorrowedNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(PubConstant.numberInputOnly);
             // 
             // label11
             // 
@@ -241,7 +243,7 @@
             this.rCurNum.Name = "rCurNum";
             this.rCurNum.Size = new System.Drawing.Size(100, 21);
             this.rCurNum.TabIndex = 20;
-            this.rCurNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
+            this.rCurNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(PubConstant.numberInputOnly);
             // 
             // label12
             // 
@@ -280,7 +282,7 @@
             this.phone.Name = "phone";
             this.phone.Size = new System.Drawing.Size(100, 21);
             this.phone.TabIndex = 15;
-            this.phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
+            this.phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(PubConstant.numberInputOnly);
             // 
             // label5
             // 
@@ -338,7 +340,7 @@
             this.borrowid.Name = "borrowid";
             this.borrowid.Size = new System.Drawing.Size(100, 21);
             this.borrowid.TabIndex = 1;
-            this.borrowid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
+            this.borrowid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(PubConstant.numberInputOnly);
             // 
             // label1
             // 
@@ -508,7 +510,7 @@
             this.bookTotalCount.Name = "bookTotalCount";
             this.bookTotalCount.Size = new System.Drawing.Size(100, 21);
             this.bookTotalCount.TabIndex = 21;
-            this.bookTotalCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
+            this.bookTotalCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(PubConstant.numberInputOnly);
             // 
             // press
             // 
@@ -549,7 +551,7 @@
             this.bookBorrowCount.Name = "bookBorrowCount";
             this.bookBorrowCount.Size = new System.Drawing.Size(100, 21);
             this.bookBorrowCount.TabIndex = 19;
-            this.bookBorrowCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
+            this.bookBorrowCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(PubConstant.numberInputOnly);
             // 
             // label15
             // 
@@ -566,7 +568,7 @@
             this.bookID.Name = "bookID";
             this.bookID.Size = new System.Drawing.Size(100, 21);
             this.bookID.TabIndex = 1;
-            this.bookID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
+            this.bookID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(PubConstant.numberInputOnly);
             // 
             // label16
             // 

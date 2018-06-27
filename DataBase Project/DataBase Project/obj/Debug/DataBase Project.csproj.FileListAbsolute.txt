@@ -34,3 +34,5 @@ F:\DataBase-Project\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase_P
 F:\DataBase-Project\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase_Project.register.resources
 F:\DataBase-Project\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase Project.csproj.GenerateResource.Cache
 F:\DataBase-Project\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase_Project.BookEdit.resources
+D:\数据库大作业\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase_Project.BookEdit.resources
+D:\数据库大作业\trunk\DataBase Project\DataBase Project\obj\Debug\DataBase_Project.ReaderEdit.resources

@@ -6,18 +6,18 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Data.Common;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
-namespace DBUtility
+namespace DataBase_Project
 {
     /// <summary>
     /// 数据访问抽象基础类
     /// </summary>
     public abstract class DbHelperSQL
     {
-        public static string connectionString = PubConstant.ConnectionString;
-
         public DbHelperSQL()
         {
+
         }
 
         #region  执行简单SQL语句
@@ -29,45 +29,20 @@ namespace DBUtility
         /// <returns>影响的记录数</returns>
         public static int ExecuteSql(string SQLString)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(SQLString, PubConstant.currentConnection))
             {
-                using (SqlCommand cmd = new SqlCommand(SQLString, connection))
+                try
                 {
-                    try
-                    {
-                        connection.Open();
-                        int rows = cmd.ExecuteNonQuery();
-                        return rows;
-                    }
-                    catch (System.Data.SqlClient.SqlException e)
-                    {
-                        connection.Close();
-                        throw e;
-                    }
+                    int rows = cmd.ExecuteNonQuery();
+                    return rows;
+                }
+                catch (SqlException e)
+                {
+                    if (MessageBox.Show(e.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
+                        return 0;
+                    return 0;
                 }
             }
-        }
-
-        /// <summary>
-        /// 执行查询语句，返回SqlDataReader ( 注意：调用该方法后，一定要对SqlDataReader进行Close )
-        /// </summary>
-        /// <param name="strSQL">查询语句</param>
-        /// <returns>SqlDataReader</returns>
-        public static SqlDataReader ExecuteReader(string strSQL)
-        {
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand cmd = new SqlCommand(strSQL, connection);
-            try
-            {
-                connection.Open();
-                SqlDataReader myReader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                return myReader;
-            }
-            catch (System.Data.SqlClient.SqlException e)
-            {
-                throw e;
-            }
-
         }
 
         /// <summary>
@@ -77,21 +52,18 @@ namespace DBUtility
         /// <returns>DataSet</returns>
         public static DataSet Query(string SQLString)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            DataSet ds = new DataSet();
+            try
             {
-                DataSet ds = new DataSet();
-                try
-                {
-                    connection.Open();
-                    SqlDataAdapter command = new SqlDataAdapter(SQLString, connection);
-                    command.Fill(ds, "ds");
-                }
-                catch (System.Data.SqlClient.SqlException ex)
-                {
-                    throw new Exception(ex.Message);
-                }
-                return ds;
+                SqlDataAdapter command = new SqlDataAdapter(SQLString, PubConstant.currentConnection);
+                command.Fill(ds, "ds");
             }
+            catch (SqlException ex)
+            {
+                if (MessageBox.Show(ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
+                    return ds;
+            }
+            return ds;
         }
 
         #endregion
