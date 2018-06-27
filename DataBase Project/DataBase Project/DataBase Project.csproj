@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookEdit.Designer.cs">
+      <DependentUpon>BookEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="borrow_return.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     <Compile Include="register.Designer.cs">
       <DependentUpon>register.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BookEdit.resx">
+      <DependentUpon>BookEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="borrow_return.resx">
       <DependentUpon>borrow_return.cs</DependentUpon>
     </EmbeddedResource>
