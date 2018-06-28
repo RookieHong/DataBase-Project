@@ -135,21 +135,21 @@
             this.account.Location = new System.Drawing.Point(313, 182);
             this.account.Name = "account";
             this.account.Size = new System.Drawing.Size(107, 21);
-            this.account.TabIndex = 9;
+            this.account.TabIndex = 8;
             // 
             // dept
             // 
             this.dept.Location = new System.Drawing.Point(108, 176);
             this.dept.Name = "dept";
             this.dept.Size = new System.Drawing.Size(107, 21);
-            this.dept.TabIndex = 10;
+            this.dept.TabIndex = 3;
             // 
             // phone
             // 
             this.phone.Location = new System.Drawing.Point(313, 148);
             this.phone.Name = "phone";
             this.phone.Size = new System.Drawing.Size(107, 21);
-            this.phone.TabIndex = 11;
+            this.phone.TabIndex = 7;
             this.phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
             // 
             // job
@@ -157,14 +157,14 @@
             this.job.Location = new System.Drawing.Point(108, 142);
             this.job.Name = "job";
             this.job.Size = new System.Drawing.Size(107, 21);
-            this.job.TabIndex = 12;
+            this.job.TabIndex = 2;
             // 
             // rBorrowedNum
             // 
             this.rBorrowedNum.Location = new System.Drawing.Point(313, 111);
             this.rBorrowedNum.Name = "rBorrowedNum";
             this.rBorrowedNum.Size = new System.Drawing.Size(107, 21);
-            this.rBorrowedNum.TabIndex = 13;
+            this.rBorrowedNum.TabIndex = 6;
             this.rBorrowedNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
             // 
             // rname
@@ -172,14 +172,14 @@
             this.rname.Location = new System.Drawing.Point(108, 105);
             this.rname.Name = "rname";
             this.rname.Size = new System.Drawing.Size(107, 21);
-            this.rname.TabIndex = 14;
+            this.rname.TabIndex = 1;
             // 
             // rCurNum
             // 
             this.rCurNum.Location = new System.Drawing.Point(313, 74);
             this.rCurNum.Name = "rCurNum";
             this.rCurNum.Size = new System.Drawing.Size(107, 21);
-            this.rCurNum.TabIndex = 15;
+            this.rCurNum.TabIndex = 5;
             this.rCurNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
             // 
             // borrowid
@@ -187,7 +187,7 @@
             this.borrowid.Location = new System.Drawing.Point(108, 71);
             this.borrowid.Name = "borrowid";
             this.borrowid.Size = new System.Drawing.Size(107, 21);
-            this.borrowid.TabIndex = 16;
+            this.borrowid.TabIndex = 0;
             // 
             // sex
             // 
@@ -199,7 +199,7 @@
             this.sex.Location = new System.Drawing.Point(108, 216);
             this.sex.Name = "sex";
             this.sex.Size = new System.Drawing.Size(107, 20);
-            this.sex.TabIndex = 17;
+            this.sex.TabIndex = 4;
             // 
             // confirm
             // 
