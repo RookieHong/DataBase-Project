@@ -406,6 +406,7 @@
             this.returnBook.TabIndex = 5;
             this.returnBook.Text = "还书";
             this.returnBook.UseVisualStyleBackColor = true;
+            this.returnBook.Click += new System.EventHandler(this.returnBook_Click);
             // 
             // borrowBook
             // 
@@ -415,6 +416,7 @@
             this.borrowBook.TabIndex = 4;
             this.borrowBook.Text = "借书";
             this.borrowBook.UseVisualStyleBackColor = true;
+            this.borrowBook.Click += new System.EventHandler(this.borrowBook_Click);
             // 
             // groupBox3
             // 

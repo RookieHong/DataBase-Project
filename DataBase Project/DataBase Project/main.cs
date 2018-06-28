@@ -239,5 +239,98 @@ namespace DataBase_Project
                 e.Handled = true;
             }
         }
+
+        private void borrowBook_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string sql = String.Format("select borrowid from readers where account='{0}'", PubConstant.currentAccount);
+                DataSet result = DbHelperSQL.Query(sql);
+                string readerID = result.Tables["ds"].Rows[0]["borrowid"].ToString();
+
+                int index = bookSearchResult.CurrentRow.Index;
+                string inputIsbn = bookSearchResult.Rows[index].Cells[0].Value.ToString().Trim();
+
+                sql = String.Format("insert into rb values('{0}','{1}','{2}',{3},'{4}',{5})", 
+                                    readerID, inputIsbn, DateTime.Now.ToString("yyyy-MM-dd"), 30, DateTime.Now.AddDays(30).ToString("yyyy-MM-dd"), 30);
+
+                if (DialogResult.Yes == MessageBox.Show("确定借书？", "警告", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1))
+                {
+                    //SQL借书语句字符串
+                    if (DbHelperSQL.ExecuteSql(sql) > 0) //向源数据库传递SQL命令字符串，得到借书结果
+                    {
+                        MessageBox.Show("借书成功");
+
+                        //查询语句
+                        string bookSearchSql =
+                            String.Format("select * from books where isbn like '%{0}%' and bname like '%{1}%' and pub like '%{2}%' and author like '%{3}%' and bCurNum>={4} and storeNum>={5} and available='{6}'",
+                                            bookID.Text, bookName.Text, press.Text, author.Text, bookBorrowCount.Text, bookTotalCount.Text, borrowable.Text);
+                        result = DbHelperSQL.Query(bookSearchSql);
+
+                        this.bookSearchResult.DataSource = result.Tables["ds"];
+                    }
+                    else
+                    {
+                        MessageBox.Show("借书失败");
+                    }
+                }
+            }
+            catch (NullReferenceException exception)
+            {
+                MessageBox.Show("请先选中一行！");
+                return;
+            }
+            catch(SqlException exception)
+            {
+                MessageBox.Show(exception.Message);
+                return;
+            }
+        }
+
+        private void returnBook_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string sql = String.Format("select borrowid from readers where account='{0}'", PubConstant.currentAccount);
+                DataSet result = DbHelperSQL.Query(sql);
+                string readerID = result.Tables["ds"].Rows[0]["borrowid"].ToString();
+
+                int index = bookSearchResult.CurrentRow.Index;
+                string inputIsbn = bookSearchResult.Rows[index].Cells[0].Value.ToString().Trim();
+
+                sql = String.Format("delete from rb where borrowid='{0}' and isbn='{1}'", readerID, inputIsbn);
+
+                if (DialogResult.Yes == MessageBox.Show("确定借书？", "警告", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1))
+                {
+                    //SQL还书语句字符串
+                    if (DbHelperSQL.ExecuteSql(sql) > 0) //向源数据库传递SQL命令字符串，得到还书结果
+                    {
+                        MessageBox.Show("还书成功");
+
+                        //查询语句
+                        string bookSearchSql =
+                            String.Format("select * from books where isbn like '%{0}%' and bname like '%{1}%' and pub like '%{2}%' and author like '%{3}%' and bCurNum>={4} and storeNum>={5} and available='{6}'",
+                                            bookID.Text, bookName.Text, press.Text, author.Text, bookBorrowCount.Text, bookTotalCount.Text, borrowable.Text);
+                        result = DbHelperSQL.Query(bookSearchSql);
+
+                        this.bookSearchResult.DataSource = result.Tables["ds"];
+                    }
+                    else
+                    {
+                        MessageBox.Show("你没有借过这本书！");
+                    }
+                }
+            }
+            catch (NullReferenceException exception)
+            {
+                MessageBox.Show("请先选中一行！");
+                return;
+            }
+            catch (SqlException exception)
+            {
+                MessageBox.Show(exception.Message);
+                return;
+            }
+        }
     }
 }
