@@ -35,13 +35,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.bname = new System.Windows.Forms.TextBox();
+            this.isbn = new System.Windows.Forms.TextBox();
+            this.author = new System.Windows.Forms.TextBox();
+            this.pub = new System.Windows.Forms.TextBox();
+            this.bCurNum = new System.Windows.Forms.TextBox();
+            this.storeNum = new System.Windows.Forms.TextBox();
+            this.available = new System.Windows.Forms.ComboBox();
+            this.booksubmit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -114,73 +115,84 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "是否可借";
             // 
-            // textBox1
+            // bname
             // 
-            this.textBox1.Location = new System.Drawing.Point(339, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 21);
-            this.textBox1.TabIndex = 7;
+            this.bname.Location = new System.Drawing.Point(339, 31);
+            this.bname.Name = "bname";
+            this.bname.Size = new System.Drawing.Size(121, 21);
+            this.bname.TabIndex = 1;
             // 
-            // textBox2
+            // isbn
             // 
-            this.textBox2.Location = new System.Drawing.Point(106, 31);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 21);
-            this.textBox2.TabIndex = 8;
+            this.isbn.Location = new System.Drawing.Point(106, 31);
+            this.isbn.Name = "isbn";
+            this.isbn.Size = new System.Drawing.Size(121, 21);
+            this.isbn.TabIndex = 0;
             // 
-            // textBox3
+            // author
             // 
-            this.textBox3.Location = new System.Drawing.Point(339, 68);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 21);
-            this.textBox3.TabIndex = 9;
+            this.author.Location = new System.Drawing.Point(339, 68);
+            this.author.Name = "author";
+            this.author.Size = new System.Drawing.Size(121, 21);
+            this.author.TabIndex = 3;
             // 
-            // textBox4
+            // pub
             // 
-            this.textBox4.Location = new System.Drawing.Point(106, 68);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(121, 21);
-            this.textBox4.TabIndex = 10;
+            this.pub.Location = new System.Drawing.Point(106, 68);
+            this.pub.Name = "pub";
+            this.pub.Size = new System.Drawing.Size(121, 21);
+            this.pub.TabIndex = 2;
             // 
-            // textBox5
+            // bCurNum
             // 
-            this.textBox5.Location = new System.Drawing.Point(339, 109);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(121, 21);
-            this.textBox5.TabIndex = 11;
+            this.bCurNum.Location = new System.Drawing.Point(339, 109);
+            this.bCurNum.Name = "bCurNum";
+            this.bCurNum.Size = new System.Drawing.Size(121, 21);
+            this.bCurNum.TabIndex = 5;
             // 
-            // textBox6
+            // storeNum
             // 
-            this.textBox6.Location = new System.Drawing.Point(106, 113);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(121, 21);
-            this.textBox6.TabIndex = 12;
+            this.storeNum.Location = new System.Drawing.Point(106, 113);
+            this.storeNum.Name = "storeNum";
+            this.storeNum.Size = new System.Drawing.Size(121, 21);
+            this.storeNum.TabIndex = 4;
             // 
-            // comboBox1
+            // available
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.available.BackColor = System.Drawing.SystemColors.Window;
+            this.available.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.available.FormattingEnabled = true;
+            this.available.Items.AddRange(new object[] {
             "是",
             "否"});
-            this.comboBox1.Location = new System.Drawing.Point(106, 158);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
-            this.comboBox1.TabIndex = 13;
+            this.available.Location = new System.Drawing.Point(106, 158);
+            this.available.Name = "available";
+            this.available.Size = new System.Drawing.Size(121, 20);
+            this.available.TabIndex = 13;
+            // 
+            // booksubmit
+            // 
+            this.booksubmit.Location = new System.Drawing.Point(198, 250);
+            this.booksubmit.Name = "booksubmit";
+            this.booksubmit.Size = new System.Drawing.Size(75, 23);
+            this.booksubmit.TabIndex = 14;
+            this.booksubmit.Text = "确定";
+            this.booksubmit.UseVisualStyleBackColor = true;
+            this.booksubmit.Click += new System.EventHandler(this.booksubmit_Click);
             // 
             // BookEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(489, 315);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.booksubmit);
+            this.Controls.Add(this.available);
+            this.Controls.Add(this.storeNum);
+            this.Controls.Add(this.bCurNum);
+            this.Controls.Add(this.pub);
+            this.Controls.Add(this.author);
+            this.Controls.Add(this.isbn);
+            this.Controls.Add(this.bname);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -190,6 +202,7 @@
             this.Controls.Add(this.label1);
             this.Name = "BookEdit";
             this.Text = "图书信息";
+            this.Load += new System.EventHandler(this.BookEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,12 +217,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox bname;
+        private System.Windows.Forms.TextBox isbn;
+        private System.Windows.Forms.TextBox author;
+        private System.Windows.Forms.TextBox pub;
+        private System.Windows.Forms.TextBox bCurNum;
+        private System.Windows.Forms.TextBox storeNum;
+        private System.Windows.Forms.ComboBox available;
+        private System.Windows.Forms.Button booksubmit;
     }
 }

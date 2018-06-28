@@ -139,5 +139,44 @@ namespace DataBase_Project
         {
 
         }
+
+        private void addBook_Click(object sender, EventArgs e)
+        {
+            BookEdit formEdit = new BookEdit();
+            formEdit.Text = "图书信息添加";
+            formEdit.Optype = "ADD";
+            formEdit.ShowDialog();
+            //查询语句
+            string bookSearchSql =
+                String.Format("select * from books where isbn like '%{0}%' and bname like '%{1}%' and pub like '%{2}%' and author like '%{3}%' and bCurNum>={4} and storeNum>={5} and available='{6}'",
+                                bookID.Text, bookName.Text, press.Text, author.Text, bookBorrowCount.Text, bookTotalCount.Text, borrowable.Text);
+            DataSet result = DbHelperSQL.Query(bookSearchSql);
+
+            this.bookSearchResult.DataSource = result.Tables["ds"];
+        }
+
+        private void editBook_Click(object sender, EventArgs e)
+        {
+
+            int index = -1;
+            index = bookSearchResult.CurrentRow.Index;//获取当前选中行
+            if (index == -1)
+            {
+                MessageBox.Show("请选择要编辑的行");
+                return;
+            }
+            BookEdit formEdit = new BookEdit();
+            formEdit.Text = "图书信息修改";
+            formEdit.Optype = "EDIT";
+            formEdit.bookid = bookSearchResult.Rows[index].Cells[0].Value.ToString().Trim();//获取第0列(isbn）数据
+            formEdit.ShowDialog();
+            //查询语句
+            string bookSearchSql =
+                String.Format("select * from books where isbn like '%{0}%' and bname like '%{1}%' and pub like '%{2}%' and author like '%{3}%' and bCurNum>={4} and storeNum>={5} and available='{6}'",
+                                bookID.Text, bookName.Text, press.Text, author.Text, bookBorrowCount.Text, bookTotalCount.Text, borrowable.Text);
+            DataSet result = DbHelperSQL.Query(bookSearchSql);
+
+            this.bookSearchResult.DataSource = result.Tables["ds"];
+        }
     }
 }
