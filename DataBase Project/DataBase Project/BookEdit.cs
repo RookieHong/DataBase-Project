@@ -103,5 +103,25 @@ namespace DataBase_Project
             }
             this.Close();
         }
+
+        private void numberInputOnly(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar) || e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void BookEdit_Shown(object sender, EventArgs e)
+        {
+            if(Optype=="EDIT")
+            {
+                isbn.ReadOnly = true;
+            }
+        }
     }
 }

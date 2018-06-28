@@ -138,6 +138,7 @@
             this.editReader.TabIndex = 4;
             this.editReader.Text = "编辑";
             this.editReader.UseVisualStyleBackColor = true;
+            this.editReader.Click += new System.EventHandler(this.editReader_Click);
             // 
             // deleteReader
             // 
@@ -226,6 +227,7 @@
             this.rBorrowedNum.Name = "rBorrowedNum";
             this.rBorrowedNum.Size = new System.Drawing.Size(100, 21);
             this.rBorrowedNum.TabIndex = 22;
+            this.rBorrowedNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
             // 
             // label11
             // 
@@ -242,6 +244,7 @@
             this.rCurNum.Name = "rCurNum";
             this.rCurNum.Size = new System.Drawing.Size(100, 21);
             this.rCurNum.TabIndex = 20;
+            this.rCurNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
             // 
             // label12
             // 
@@ -280,6 +283,7 @@
             this.phone.Name = "phone";
             this.phone.Size = new System.Drawing.Size(100, 21);
             this.phone.TabIndex = 15;
+            this.phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
             // 
             // label5
             // 
@@ -508,6 +512,7 @@
             this.bookTotalCount.Name = "bookTotalCount";
             this.bookTotalCount.Size = new System.Drawing.Size(100, 21);
             this.bookTotalCount.TabIndex = 21;
+            this.bookTotalCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
             // 
             // press
             // 
@@ -548,6 +553,7 @@
             this.bookBorrowCount.Name = "bookBorrowCount";
             this.bookBorrowCount.Size = new System.Drawing.Size(100, 21);
             this.bookBorrowCount.TabIndex = 19;
+            this.bookBorrowCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
             // 
             // label15
             // 

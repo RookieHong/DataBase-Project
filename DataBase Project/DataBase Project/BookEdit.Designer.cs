@@ -49,7 +49,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(43, 34);
+            this.label1.Location = new System.Drawing.Point(43, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 0;
@@ -59,7 +59,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(272, 34);
+            this.label2.Location = new System.Drawing.Point(272, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 1;
@@ -69,7 +69,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("宋体", 9F);
-            this.label3.Location = new System.Drawing.Point(43, 73);
+            this.label3.Location = new System.Drawing.Point(43, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 2;
@@ -79,7 +79,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("宋体", 9F);
-            this.label4.Location = new System.Drawing.Point(272, 73);
+            this.label4.Location = new System.Drawing.Point(272, 98);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 3;
@@ -89,7 +89,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("宋体", 9F);
-            this.label5.Location = new System.Drawing.Point(43, 114);
+            this.label5.Location = new System.Drawing.Point(43, 139);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 4;
@@ -99,7 +99,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("宋体", 9F);
-            this.label6.Location = new System.Drawing.Point(272, 114);
+            this.label6.Location = new System.Drawing.Point(272, 139);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 12);
             this.label6.TabIndex = 5;
@@ -109,7 +109,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("宋体", 9F);
-            this.label7.Location = new System.Drawing.Point(43, 162);
+            this.label7.Location = new System.Drawing.Point(43, 187);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 12);
             this.label7.TabIndex = 6;
@@ -117,45 +117,47 @@
             // 
             // bname
             // 
-            this.bname.Location = new System.Drawing.Point(339, 31);
+            this.bname.Location = new System.Drawing.Point(339, 56);
             this.bname.Name = "bname";
             this.bname.Size = new System.Drawing.Size(121, 21);
             this.bname.TabIndex = 1;
             // 
             // isbn
             // 
-            this.isbn.Location = new System.Drawing.Point(106, 31);
+            this.isbn.Location = new System.Drawing.Point(106, 56);
             this.isbn.Name = "isbn";
             this.isbn.Size = new System.Drawing.Size(121, 21);
             this.isbn.TabIndex = 0;
             // 
             // author
             // 
-            this.author.Location = new System.Drawing.Point(339, 68);
+            this.author.Location = new System.Drawing.Point(339, 93);
             this.author.Name = "author";
             this.author.Size = new System.Drawing.Size(121, 21);
             this.author.TabIndex = 3;
             // 
             // pub
             // 
-            this.pub.Location = new System.Drawing.Point(106, 68);
+            this.pub.Location = new System.Drawing.Point(106, 93);
             this.pub.Name = "pub";
             this.pub.Size = new System.Drawing.Size(121, 21);
             this.pub.TabIndex = 2;
             // 
             // bCurNum
             // 
-            this.bCurNum.Location = new System.Drawing.Point(339, 109);
+            this.bCurNum.Location = new System.Drawing.Point(339, 134);
             this.bCurNum.Name = "bCurNum";
             this.bCurNum.Size = new System.Drawing.Size(121, 21);
             this.bCurNum.TabIndex = 5;
+            this.bCurNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
             // 
             // storeNum
             // 
-            this.storeNum.Location = new System.Drawing.Point(106, 113);
+            this.storeNum.Location = new System.Drawing.Point(106, 138);
             this.storeNum.Name = "storeNum";
             this.storeNum.Size = new System.Drawing.Size(121, 21);
             this.storeNum.TabIndex = 4;
+            this.storeNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
             // 
             // available
             // 
@@ -165,14 +167,14 @@
             this.available.Items.AddRange(new object[] {
             "是",
             "否"});
-            this.available.Location = new System.Drawing.Point(106, 158);
+            this.available.Location = new System.Drawing.Point(106, 183);
             this.available.Name = "available";
             this.available.Size = new System.Drawing.Size(121, 20);
             this.available.TabIndex = 13;
             // 
             // booksubmit
             // 
-            this.booksubmit.Location = new System.Drawing.Point(198, 250);
+            this.booksubmit.Location = new System.Drawing.Point(205, 236);
             this.booksubmit.Name = "booksubmit";
             this.booksubmit.Size = new System.Drawing.Size(75, 23);
             this.booksubmit.TabIndex = 14;
@@ -203,6 +205,7 @@
             this.Name = "BookEdit";
             this.Text = "图书信息";
             this.Load += new System.EventHandler(this.BookEdit_Load);
+            this.Shown += new System.EventHandler(this.BookEdit_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

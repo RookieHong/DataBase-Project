@@ -150,6 +150,7 @@
             this.phone.Name = "phone";
             this.phone.Size = new System.Drawing.Size(107, 21);
             this.phone.TabIndex = 11;
+            this.phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
             // 
             // job
             // 
@@ -164,6 +165,7 @@
             this.rBorrowedNum.Name = "rBorrowedNum";
             this.rBorrowedNum.Size = new System.Drawing.Size(107, 21);
             this.rBorrowedNum.TabIndex = 13;
+            this.rBorrowedNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
             // 
             // rname
             // 
@@ -178,6 +180,7 @@
             this.rCurNum.Name = "rCurNum";
             this.rCurNum.Size = new System.Drawing.Size(107, 21);
             this.rCurNum.TabIndex = 15;
+            this.rCurNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberInputOnly);
             // 
             // borrowid
             // 
@@ -204,8 +207,9 @@
             this.confirm.Name = "confirm";
             this.confirm.Size = new System.Drawing.Size(75, 23);
             this.confirm.TabIndex = 18;
-            this.confirm.Text = "添加";
+            this.confirm.Text = "确认";
             this.confirm.UseVisualStyleBackColor = true;
+            this.confirm.Click += new System.EventHandler(this.confirm_Click);
             // 
             // ReaderEdit
             // 
@@ -234,6 +238,7 @@
             this.Name = "ReaderEdit";
             this.Text = "读者编辑";
             this.Load += new System.EventHandler(this.ReaderEdit_Load);
+            this.Shown += new System.EventHandler(this.ReaderEdit_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
