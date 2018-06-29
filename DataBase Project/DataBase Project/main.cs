@@ -242,12 +242,12 @@ namespace DataBase_Project
 
         private void borrowBook_Click(object sender, EventArgs e)
         {
+            string sql, readerID;
+            sql = String.Format("select borrowid from readers where account='{0}'", PubConstant.currentAccount);
+            DataSet result = DbHelperSQL.Query(sql);
+            readerID = result.Tables["ds"].Rows[0]["borrowid"].ToString();
             try
             {
-                string sql = String.Format("select borrowid from readers where account='{0}'", PubConstant.currentAccount);
-                DataSet result = DbHelperSQL.Query(sql);
-                string readerID = result.Tables["ds"].Rows[0]["borrowid"].ToString();
-
                 int index = bookSearchResult.CurrentRow.Index;
                 string inputIsbn = bookSearchResult.Rows[index].Cells[0].Value.ToString().Trim();
 
@@ -280,9 +280,39 @@ namespace DataBase_Project
                 MessageBox.Show("请先选中一行！");
                 return;
             }
-            catch(SqlException exception)
+            catch(Exception exception)
             {
                 MessageBox.Show(exception.Message);
+                if(exception.Message== "该读者当前还有未还书籍，不能借书!")
+                {
+                    sql = String.Format(@"select bname,sum(fine) fineSum 
+                                        from books,rb 
+                                        where returnDate<'{0}' and borrowid='{1}' 
+                                        group by borrowid,bname",
+                                        DateTime.Now.ToString("yyyy-MM-dd"), readerID);
+                    result = DbHelperSQL.Query(sql);
+                    string message = "您当前未还的书籍有：\r\n";
+                    int fineSum = 0;
+                    foreach(DataRow row in result.Tables["ds"].Rows)
+                    {
+                        message += row["bname"].ToString() + "\r\n";
+                        fineSum += int.Parse(row["fineSum"].ToString());
+                    }
+                    if (DialogResult.Yes == MessageBox.Show(message + "为这些书籍交纳罚款？\r\n罚款总和为：" + fineSum.ToString(), "警告", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1))
+                    {
+                        sql = String.Format(@"delete from rb
+                                            where returnDate<'{0}' and borrowid='{1}'",
+                                            DateTime.Now.ToString("yyyy-MM-dd"), readerID);
+                        if (DbHelperSQL.ExecuteSql(sql) > 0)
+                        {
+                            MessageBox.Show("交纳罚款成功！");
+                        }
+                        else
+                        {
+                            MessageBox.Show("交纳罚款失败！");
+                        }
+                    }
+                }
                 return;
             }
         }
@@ -329,6 +359,21 @@ namespace DataBase_Project
             catch (SqlException exception)
             {
                 MessageBox.Show(exception.Message);
+                return;
+            }
+        }
+
+        private void delayedBookSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string sql = string.Format("select * from rb where returnDate<'{0}'", DateTime.Now.ToString("yyyy-MM-dd"));
+                DataSet result = DbHelperSQL.Query(sql);
+                this.delayedbookSearchResult.DataSource = result.Tables["ds"];
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
                 return;
             }
         }

@@ -601,6 +601,7 @@
             this.delayedBookSearch.TabIndex = 5;
             this.delayedBookSearch.Text = "查询";
             this.delayedBookSearch.UseVisualStyleBackColor = true;
+            this.delayedBookSearch.Click += new System.EventHandler(this.delayedBookSearch_Click);
             // 
             // groupBox5
             // 

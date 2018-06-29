@@ -38,7 +38,11 @@ namespace DataBase_Project
                 }
                 catch (SqlException e)
                 {
-                    if (MessageBox.Show(e.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
+                    if (e.Message == "该读者当前还有未还书籍，不能借书!")
+                    {
+                        throw new Exception("该读者当前还有未还书籍，不能借书!");
+                    }
+                    else if (MessageBox.Show(e.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
                         return 0;
                     return 0;
                 }
