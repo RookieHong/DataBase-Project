@@ -235,6 +235,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ReaderEdit";
             this.Text = "读者编辑";
             this.Load += new System.EventHandler(this.ReaderEdit_Load);

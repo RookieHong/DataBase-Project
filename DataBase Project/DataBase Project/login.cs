@@ -21,7 +21,7 @@ namespace DataBase_Project
 
         private void login_Load(object sender, EventArgs e)
         {
-            identity.SelectedIndex = 0; //初始一个默认项
+            
         }
 
         private void confirm_Click(object sender, EventArgs e)
@@ -41,17 +41,20 @@ namespace DataBase_Project
                 if (MessageBox.Show(exception.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
                     return;
             }
+            string sql = String.Format("select id from users where account='{0}'", account.Text.Trim());
+            DataSet result = DbHelperSQL.Query(sql);
+            string loginId = result.Tables["ds"].Rows[0]["id"].ToString();
             if (MessageBox.Show("登录成功！", "提示") == DialogResult.OK)
             {
                 PubConstant.currentAccount = account.Text.Trim();
                 PubConstant.currentPasswd = password.Text;
 
-                switch (identity.SelectedIndex)
+                switch (loginId)
                 {
-                    case 0:
+                    case "管理员":
                         PubConstant.identity = loginStatus.Admin;
                         break;
-                    case 1:
+                    case "读者":
                         PubConstant.identity = loginStatus.Reader;
                         break;
                 }

@@ -54,12 +54,6 @@
     <Compile Include="BookEdit.Designer.cs">
       <DependentUpon>BookEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="borrow_return.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="borrow_return.Designer.cs">
-      <DependentUpon>borrow_return.cs</DependentUpon>
-    </Compile>
     <Compile Include="DbHelperSQL.cs" />
     <Compile Include="login.cs">
       <SubType>Form</SubType>
@@ -91,9 +85,6 @@
     <EmbeddedResource Include="BookEdit.resx">
       <DependentUpon>BookEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="borrow_return.resx">
-      <DependentUpon>borrow_return.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +106,7 @@
     <EmbeddedResource Include="register.resx">
       <DependentUpon>register.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

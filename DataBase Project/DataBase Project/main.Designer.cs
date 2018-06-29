@@ -370,7 +370,7 @@
             // 
             // editBook
             // 
-            this.editBook.Location = new System.Drawing.Point(680, 486);
+            this.editBook.Location = new System.Drawing.Point(671, 485);
             this.editBook.Name = "editBook";
             this.editBook.Size = new System.Drawing.Size(75, 23);
             this.editBook.TabIndex = 8;
@@ -380,7 +380,7 @@
             // 
             // deleteBook
             // 
-            this.deleteBook.Location = new System.Drawing.Point(357, 486);
+            this.deleteBook.Location = new System.Drawing.Point(348, 485);
             this.deleteBook.Name = "deleteBook";
             this.deleteBook.Size = new System.Drawing.Size(75, 23);
             this.deleteBook.TabIndex = 7;
@@ -390,7 +390,7 @@
             // 
             // addBook
             // 
-            this.addBook.Location = new System.Drawing.Point(35, 486);
+            this.addBook.Location = new System.Drawing.Point(26, 485);
             this.addBook.Name = "addBook";
             this.addBook.Size = new System.Drawing.Size(75, 23);
             this.addBook.TabIndex = 6;
@@ -400,7 +400,7 @@
             // 
             // returnBook
             // 
-            this.returnBook.Location = new System.Drawing.Point(521, 486);
+            this.returnBook.Location = new System.Drawing.Point(512, 485);
             this.returnBook.Name = "returnBook";
             this.returnBook.Size = new System.Drawing.Size(75, 23);
             this.returnBook.TabIndex = 5;
@@ -410,7 +410,7 @@
             // 
             // borrowBook
             // 
-            this.borrowBook.Location = new System.Drawing.Point(194, 486);
+            this.borrowBook.Location = new System.Drawing.Point(185, 485);
             this.borrowBook.Name = "borrowBook";
             this.borrowBook.Size = new System.Drawing.Size(75, 23);
             this.borrowBook.TabIndex = 4;
@@ -421,7 +421,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.bookSearchResult);
-            this.groupBox3.Location = new System.Drawing.Point(32, 175);
+            this.groupBox3.Location = new System.Drawing.Point(23, 174);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(723, 310);
             this.groupBox3.TabIndex = 3;
@@ -445,7 +445,7 @@
             this.bookCondition.Controls.Add(this.label15);
             this.bookCondition.Controls.Add(this.bookID);
             this.bookCondition.Controls.Add(this.label16);
-            this.bookCondition.Location = new System.Drawing.Point(32, 21);
+            this.bookCondition.Location = new System.Drawing.Point(23, 20);
             this.bookCondition.Name = "bookCondition";
             this.bookCondition.Size = new System.Drawing.Size(723, 148);
             this.bookCondition.TabIndex = 2;
@@ -628,6 +628,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(779, 550);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "main";
             this.Text = "查询&管理";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.main_FormClosed);

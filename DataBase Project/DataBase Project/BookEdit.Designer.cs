@@ -202,6 +202,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "BookEdit";
             this.Text = "图书信息";
             this.Load += new System.EventHandler(this.BookEdit_Load);

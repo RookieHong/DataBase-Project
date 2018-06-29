@@ -32,8 +32,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.account = new System.Windows.Forms.TextBox();
             this.password = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.identity = new System.Windows.Forms.ComboBox();
             this.confirm = new System.Windows.Forms.Button();
             this.register = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -71,30 +69,9 @@
             this.password.TabIndex = 3;
             this.password.UseSystemPasswordChar = true;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(123, 143);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 12);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "身份";
-            // 
-            // identity
-            // 
-            this.identity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.identity.FormattingEnabled = true;
-            this.identity.Items.AddRange(new object[] {
-            "管理员",
-            "读者"});
-            this.identity.Location = new System.Drawing.Point(250, 143);
-            this.identity.Name = "identity";
-            this.identity.Size = new System.Drawing.Size(100, 20);
-            this.identity.TabIndex = 5;
-            // 
             // confirm
             // 
-            this.confirm.Location = new System.Drawing.Point(149, 205);
+            this.confirm.Location = new System.Drawing.Point(141, 147);
             this.confirm.Name = "confirm";
             this.confirm.Size = new System.Drawing.Size(75, 23);
             this.confirm.TabIndex = 6;
@@ -104,7 +81,7 @@
             // 
             // register
             // 
-            this.register.Location = new System.Drawing.Point(250, 205);
+            this.register.Location = new System.Drawing.Point(242, 147);
             this.register.Name = "register";
             this.register.Size = new System.Drawing.Size(75, 23);
             this.register.TabIndex = 7;
@@ -116,15 +93,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 273);
+            this.ClientSize = new System.Drawing.Size(454, 211);
             this.Controls.Add(this.register);
             this.Controls.Add(this.confirm);
-            this.Controls.Add(this.identity);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.password);
             this.Controls.Add(this.account);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "login";
             this.Text = "登录";
             this.Load += new System.EventHandler(this.login_Load);
@@ -139,8 +117,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox account;
         private System.Windows.Forms.TextBox password;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox identity;
         private System.Windows.Forms.Button confirm;
         private System.Windows.Forms.Button register;
     }
