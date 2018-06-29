@@ -242,12 +242,14 @@ namespace DataBase_Project
 
         private void borrowBook_Click(object sender, EventArgs e)
         {
-            string sql, readerID;
-            sql = String.Format("select borrowid from readers where account='{0}'", PubConstant.currentAccount);
-            DataSet result = DbHelperSQL.Query(sql);
-            readerID = result.Tables["ds"].Rows[0]["borrowid"].ToString();
+            string sql, readerID = "";
+            DataSet result = null;
             try
             {
+                sql = String.Format("select borrowid from readers where account='{0}'", PubConstant.currentAccount);
+                result = DbHelperSQL.Query(sql);
+                readerID = result.Tables["ds"].Rows[0]["borrowid"].ToString();
+
                 int index = bookSearchResult.CurrentRow.Index;
                 string inputIsbn = bookSearchResult.Rows[index].Cells[0].Value.ToString().Trim();
 
@@ -282,7 +284,11 @@ namespace DataBase_Project
             }
             catch(Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                if (exception.Message =="在位置 0 处没有任何行。")
+                {
+                    MessageBox.Show("管理员没有添加该读者！");
+                }
+                else MessageBox.Show(exception.Message);
                 if(exception.Message== "该读者当前还有未还书籍，不能借书!")
                 {
                     sql = String.Format(@"select bname,sum(fine) fineSum 
@@ -330,7 +336,7 @@ namespace DataBase_Project
 
                 sql = String.Format("delete from rb where borrowid='{0}' and isbn='{1}'", readerID, inputIsbn);
 
-                if (DialogResult.Yes == MessageBox.Show("确定借书？", "警告", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1))
+                if (DialogResult.Yes == MessageBox.Show("确定还书？", "警告", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1))
                 {
                     //SQL还书语句字符串
                     if (DbHelperSQL.ExecuteSql(sql) > 0) //向源数据库传递SQL命令字符串，得到还书结果
