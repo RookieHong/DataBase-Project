@@ -18,6 +18,31 @@ namespace DataBase_Project
         {
             InitializeComponent();
         }
+
+        public login login
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public DbHelperSQL DbHelperSQL
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         private void main_Load(object sender, EventArgs e)
         {
             //初始化默认值

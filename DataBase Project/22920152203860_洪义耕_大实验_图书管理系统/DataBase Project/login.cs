@@ -19,6 +19,30 @@ namespace DataBase_Project
             InitializeComponent();
         }
 
+        public PubConstant PubConstant
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public DbHelperSQL DbHelperSQL
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         private void login_Load(object sender, EventArgs e)
         {
             

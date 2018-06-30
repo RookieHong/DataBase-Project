@@ -16,6 +16,31 @@ namespace DataBase_Project
         {
             InitializeComponent();
         }
+
+        public main main
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public DbHelperSQL DbHelperSQL
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         public string bookid;
         public string Optype;
 

@@ -19,6 +19,18 @@ namespace DataBase_Project
             InitializeComponent();
         }
 
+        public DbHelperSQL DbHelperSQL
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         private void register_Load(object sender, EventArgs e)
         {
             identity.SelectedIndex = 0;//初始一个默认项

@@ -20,6 +20,18 @@ namespace DataBase_Project
 
         }
 
+        public PubConstant PubConstant
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         #region  执行简单SQL语句
 
         /// <summary>

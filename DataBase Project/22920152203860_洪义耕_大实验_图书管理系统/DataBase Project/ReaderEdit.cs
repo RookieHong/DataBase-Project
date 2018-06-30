@@ -35,6 +35,30 @@ namespace DataBase_Project
             sex.Text = inputsex;
         }
 
+        public main main
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public DbHelperSQL DbHelperSQL
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         private void ReaderEdit_Load(object sender, EventArgs e)
         {
             sex.SelectedIndex = 0;
